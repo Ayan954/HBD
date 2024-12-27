@@ -39,8 +39,9 @@ function timeElapse(date){
 	var current = Date();
 	var seconds = (Date.parse(current) - Date.parse(date)) / 1000;
 	var days = Math.floor(seconds / (3600 * 24));
-	seconds = seconds % (3600 * 24);
-	var hours = Math.floor(seconds / 3600);
+	var hours = Math.floor((seconds % (3600 * 24)) / 3600);
+// And similarly for minutes and seconds
+
 	if (hours < 10) {
 		hours = "0" + hours;
 	}
